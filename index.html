@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тестирование ИС "Дело в беге"</title>
+    <meta name="description" content="Выпускная квалификационная работа: тестирование ИС "Дело в беге".">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #4338ca;
+            --accent: #06b6d4;
+            --bg: #f8fafc;
+            --text: #1e293b;
+            --muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Tahoma, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        header {
+            background: linear-gradient(135deg, #4f46e5, #06b6d4);
+            color: #fff;
+            padding: 80px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.15), transparent 60%);
+        }
+
+        header .inner {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 14px;
+            letter-spacing: -0.5px;
+        }
+
+        header .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(4px);
+        }
+
+        /* Контент */
+        main {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        section {
+            background: #fff;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+            border: 1px solid var(--border);
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        section p {
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Списки */
+        ul.checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.checklist li {
+            position: relative;
+            padding: 10px 0 10px 34px;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        ul.checklist li:last-child {
+            border-bottom: none;
+        }
+
+        ul.checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 22px;
+            height: 22px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        /* Стек */
+        .stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        .stack-item {
+            background: #f1f5f9;
+            border-left: 4px solid var(--accent);
+            border-radius: 10px;
+            padding: 16px;
+        }
+
+        .stack-item h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        .stack-item p {
+            font-weight: 600;
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        /* Контакты */
+        .contacts a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contacts a:hover {
+            text-decoration: underline;
+        }
+
+        /* Футер */
+        footer {
+            text-align: center;
+            padding: 30px 20px 50px;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        /* Адаптив */
+        @media (max-width: 600px) {
+            header {
+                padding: 60px 16px 40px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 22px;
+            }
+
+            section h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="inner">
+            <h1>Тестирования ИС "Дело в беге"</h1>
+            <p class="subtitle">Выпускная квалификационная работа · 2027</p>
+            <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">Groovy</span>
+                <span class="tag">Jmeter</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>📌 О проекте</h2>
+            <p>Проект посвящён написанию функциональных, нагрузочных и интеграционных тестов для системы.</p>
+            <p>Сервис помогает не бросить бегать: напоминает в удобном канале, принимает короткий отчёт и превращает одиночные пробежки в рейтинг, челленджи и сообщество — без приложений и трекеров.</p>
+        </section>
+
+        <section>
+            <h2>🎯 Чего я хочу достичь</h2>
+            <ul class="checklist">
+                <li>Готовые тестовые сценарии, покрывающие все основные действия пользователя</li>
+                <li>Отлаженные тестовые скрипты</li>
+                <li>Рабочие заглушки (эмуляторы) интеграций</li>
+                <li>Автоматизацию рутинных процессов тестирования</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🛠 Что требуется сделать</h2>
+            <ul class="checklist">
+                <li>Проанализировать статистику/логи</li>
+                <li>Составить тестовые сценарии</li>
+                <li>Сделать профиль нагрузки</li>
+                <li>Написать код скриптов тестирования</li>
+                <li>Автоматизировать скрипты тестирования</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>🧰 Стек технологий</h2>
+            <div class="stack">
+                <div class="stack-item">
+                    <h3>Языки программирования</h3>
+                    <p>Python/Java/Groovy</p>
+                </div>
+                <div class="stack-item">
+                    <h3>Среды разработки/инструменты</h3>
+                    <p>Pycharm/IDEA/Jmeter</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts">
+            <h2>📞 Контакты</h2>
+            <p>Связаться с автором проекта можно по следующим каналам:</p>
+            <p>
+                <a href="https://github.com/Prostocoders">GitHub</a> ·
+                <a href="dmitrijdro@yandex.ru">Email</a> ·
+                <a href="https://t.me/Dimka_dad">Telegram</a>
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2027 · Выпускная квалификационная работа · Ижевск
+    </footer>
+
+</body>
+</html>
